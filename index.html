@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+</head>
+<style>
+    nav {
+        margin-left: auto;
+    }
+    .nav {
+        display: flex;
+        align-items: center ;
+    }
+    nav a {
+        text-decoration: none;
+        padding: 15px 15px 15px 15px;
+    }
+    nav a:hover {
+        color: black;
+    }
+    .hero-container{
+        background-image: url('./assets/images/quotehero.png');
+        background-size: cover;
+        height: 548px;
+        width: 100%;
+    }
+    .quote {
+        padding: 15px 15px 15px 15px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img style="height: 50px; width: 100px" src="./assets/images/Q.png" alt="">
+        </div>
+        <nav>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Join Now</a>
+        </nav>
+    </div>
+    <div class="hero-container">
+    </div>
+    <div class="quote">
+    <label for="quote">What are you in the mood for: </label>
+    <select name="" id="quote">
+        <option value="">--Choose one--</option>
+        <option value="inspirational">Inspirational</option>
+        <option value="love">Love</option>
+        <option value="funny">Funny</option>
+    </select>
+    <p></p>
+</div>
+<script>
+    const select = document.querySelector('select');
+    const para = document.querySelector('p');
+
+    select.addEventListener('change', setQuote);
+
+    function setQuote() {
+        const choice = select.value;
+
+        if (choice === 'inspirational') {
+            para.textContent = 'You can do this';
+        } else if (choice === 'love') {
+            para.textContent = 'enjoy it';
+        } else if (choice === 'funny') {
+            para.textContent = 'Why do they call it rush hour when nothing moves';
+        } else {
+            para.textContent = '';
+        }
+    }
+</script>
+
+</body>
+</html>
